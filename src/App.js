@@ -30,7 +30,7 @@ function App() {
             show.map(show => {
               return (
                 <div key={show.id} show={show}>
-                  <h1>{show[0].name}</h1>
+                  <h1>{show.name}</h1>
 
                   {/* <h3>{show.url}</h3>
                   <h3>{show.language}</h3> */}

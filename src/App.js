@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-//import { Card } from "@material-ui/core";
+import { Card } from "./components/Card";
 import Nav from "./components/Nav";
 
 function App() {
@@ -18,13 +18,6 @@ function App() {
         );
         console.log(response);
         console.log(response.data);
-        // console.log(response.data.length);
-        // console.log(response.data);
-        // console.log(response.data[0]);
-        // console.log(response.data[0].show);
-        // console.log(response.data[1].show.name);
-        // console.log(response.data[2].show.name);
-        // console.log(response.data[5].show.name);
 
         setShows(response.data);
       } catch (err) {
@@ -38,7 +31,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Nav setQuery={setQuery} setToggle={setToggle} toggle={toggle} />
-        <>
+        <div>
           {shows &&
             shows.map(show => {
               return (
@@ -49,15 +42,8 @@ function App() {
                   {/* <img src={show.show.image.medium} alt="artwork"></img> */}
                 </div>
               );
-              // {
-              //   /* <h1>{show[0].name}</h1> */
-              // }
-              // {
-              //   /* <h3>{show.url}</h3>
-              //     <h3>{show.language}</h3> */
-              // }
             })}
-        </>
+        </div>
       </header>
     </div>
   );

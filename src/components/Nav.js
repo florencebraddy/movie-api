@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import InputBase from "@material-ui/core/InputBase";
+import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,9 +44,14 @@ export default function Nav({ setQuery, toggle, setToggle }) {
             placeholder="Search for a movie..."
             classes={{ root: classes.inputRoot, input: classes.inputInput }}
           />
-          <Button style={{ color: "#fff" }} onClick={() => setToggle(!toggle)}>
+          <Button
+            variant="contained"
+            color=""
+            onClick={() => setToggle(!toggle)}
+          >
             Search
           </Button>
+          <SearchIcon></SearchIcon>
         </Toolbar>
       </AppBar>
     </div>

@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+
 body {
   background-image: url("./images/film-reel.jpg");
+  /* font-family: 'Shadows Into Light', cursive; */
+}
+
+.main-content{
+  font-family: 'Shadows Into Light', cursive;
+
 }
 
 .App {
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   min-height: 100vh;
@@ -21,3 +25,4 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+

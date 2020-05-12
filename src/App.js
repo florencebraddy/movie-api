@@ -7,9 +7,8 @@ import Card from "./components/Card"
 function App() {
   const [shows, setShows] = useState([]);
   const [toggle, setToggle] = useState(true);
-  const [query, setQuery] = useState("top boy");
-  // console.log(query);
-
+  const [query, setQuery] = useState("");
+  
   useEffect(() => {
     async function getData() {
       try {
@@ -20,36 +19,33 @@ function App() {
        console.log(response.data);
        console.log(response.data[0].show.image.original)
 
-        setShows(response.data);
+       
+    setShows(response.data);
       } catch (err) {
         console.log(err);
       }
     }
     getData();
-  }, [query]);
+  }, [toggle]);
+
 //change to toggle after testing
   return (
     <div className="App">
-      <header className="App-header">
         <Nav setQuery={setQuery} setToggle={setToggle} toggle={toggle} />
         <div className="main-content">
           {shows &&
             shows.map(show => {
               return (
-               <Card key={show.show.id} show={show}></Card>
+               <Card key={show.show.id} show={show} 
+               ></Card>
               //  <p> {show.show.image.original}</p>
-                  // <h1>{show.show.name}</h1>
-                  // <h2> {show.show.genres + ""}</h2>
-                  // <p>{show.show.image}></img>
 
                   // <img src ={show.show.image}></img>
-                  // <h3>{show.show.rating.average}</h3>
                   // {/* <img src={show.show.image.medium} alt="artwork"></img> */}
                 // </div>
               );
             })}
         </div>
-      </header>
     </div>
   );
 }

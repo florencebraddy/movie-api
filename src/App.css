@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 
+
 body {
   background-image: url("./images/film-reel.jpg");
-  /* font-family: 'Shadows Into Light', cursive; */
+  /* font-family: 'Shadows Into Light';  */
 }
 
-.main-content{
+/* .main-content{
   font-family: 'Shadows Into Light', cursive;
 
-}
+} */
 
 .App {
   text-align: center;
+  font-family: 'Shadows Into Light', cursive; 
 }
 
 

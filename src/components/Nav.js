@@ -10,14 +10,33 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
+
+  main:{
+    backgroundColor: '#D3CFCE',
+  }, 
+
+
+  inputRoot: {
+    flexGrow: 1,
+    display:'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
+    color: '#0A0200'
   },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
+
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    display:'flex',
+    alignContent: 'center',
+    justifyContent: 'center'
+  },
+
+  button:{
+    flexGrow: 1,
+    textAlign: 'center',
+    padding:'0.3px',
+    margin: '5px',
+    backgroundColor: '#ffffff'
   }
 }));
 
@@ -26,17 +45,16 @@ export default function Nav({ setQuery, toggle, setToggle }) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className = {classes.main} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}></Typography>
           <InputBase
             onChange={event => setQuery(event.target.value)}
-            placeholder="Search for a movie..."
+            placeholder="Search for a movie or TV series..."
             classes={{ root: classes.inputRoot, input: classes.inputInput }}
           />
-          <Button
+          <Button className= {classes.button}
             variant="contained"
-            color=""
             onClick={() => setToggle(!toggle)}
           >
             Search

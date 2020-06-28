@@ -51,9 +51,13 @@ export default function SimplePopover({ show, toggle, setToggle }) {
         }}
       >
         <Typography className={classes.typography}>
-          Genre: {show.show}
-          {/* Collection Price: {el.collectionPrice}
-          Currency: {el.currency} */}
+          Summary: {show.show.summary}
+          <br />
+          <br/>
+          Language: {show.show.language}
+          <br />
+          <br />
+          Where to watch: {show.show.webChannel && <div>{show.show.webChannel.name}</div>}
         </Typography>
       </Popover>
     </div>

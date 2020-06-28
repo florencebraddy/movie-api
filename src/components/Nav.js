@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 // import IconButton from "@material-ui/core/IconButton";
 // import MenuIcon from "@material-ui/icons/Menu";
@@ -15,28 +15,25 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#D3CFCE',
   }, 
 
-
   inputRoot: {
     flexGrow: 1,
-    display:'flex',
     alignContent: 'center',
     justifyContent: 'center',
     color: '#0A0200'
   },
 
-  title: {
-    flexGrow: 1,
-    display:'flex',
-    alignContent: 'center',
-    justifyContent: 'center'
+  inputInput: {
+    textAlign: 'center'
   },
 
-  button:{
-    flexGrow: 1,
-    textAlign: 'center',
-    padding:'0.3px',
-    margin: '5px',
-    backgroundColor: '#ffffff'
+  button: {
+    // flexGrow: 1,
+    // borderRadius: '10px',
+    // textAlign: 'center',
+    // width: '0.9px',
+    // height: '20px',
+    // padding:'0.1px',
+    // backgroundColor: '#ffffff'
   }
 }));
 
@@ -47,7 +44,6 @@ export default function Nav({ setQuery, toggle, setToggle }) {
     <div className={classes.root}>
       <AppBar className = {classes.main} position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}></Typography>
           <InputBase
             onChange={event => setQuery(event.target.value)}
             placeholder="Search for a movie or TV series..."
@@ -57,7 +53,7 @@ export default function Nav({ setQuery, toggle, setToggle }) {
             variant="contained"
             onClick={() => setToggle(!toggle)}
           >
-            Search
+            Search 
           </Button>
           <SearchIcon></SearchIcon>
         </Toolbar>

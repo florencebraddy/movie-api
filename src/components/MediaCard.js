@@ -4,47 +4,63 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 // import Button from "@material-ui/core/Button";
+import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import Popover from "../components/Popover";
+import Popover from "./Popover";
 
 const useStyles = makeStyles({
   root: {
     maxWidth: "50%",
+    maxHeight: "50%",
     margin: "1rem auto",
     textAlign: "center",
     borderRadius: "25px"
   },
 
   name: {
-    fontSize: "30"
+    fontSize: "50px",
+    color: "grey"
   },
 
   media: {
-    height: "150"
+    width: '100%',
+    // Without height undefined it won't work
+    height: "undefined",
+    // figure out your image aspect ratio
+    aspectRatio: "135 / 76"
+    // maxWidth: "90%",
+    // height: "50vh",
+    // aspectRatio: 3/2,
+    // // boxShadow: 0 4px 8px 0 snow;
+    // borderRadius: "25px",
+    // margin: "90px"
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
+    // transition: 0.3s;
+    // text-align: center;
+  
+  
+    // height: 0,
+    // height:"750px",
+    // maxWidth: "90%",
+    // margin: "30px",
   }
 });
 
 export default function MediaCard({ show, toggle, setToggle }) {
   const classes = useStyles();
-
+  function getImage() {
+    if (show.show.image) return show.show.image.medium;
+    return "https://images.all-free-download.com/images/graphiclarge/cinema_clapper_312982.jpg"
+  }
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          style={{ height: 0, paddingTop: "70%" }}
-          className={classes.media}
-          image={
-            show.show.image && (
-              <img src={show.show.image.medium} alt="artwork"></img>
-            )
-          }
-        ></CardMedia>
+        <CardMedia className={classes.media} image={getImage()}></CardMedia>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {show.show.name}
-          </Typography>
+          <Typography className={classes.name}>{show.show.name}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {show.show.genres + " "}{" "}
           </Typography>

@@ -3,10 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import { textAlign } from "@material-ui/system";
 
 const useStyles = makeStyles(theme => ({
   typography: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(3),
+    textAlign: "center"
   }
 }));
 
@@ -51,13 +53,14 @@ export default function SimplePopover({ show, toggle, setToggle }) {
         }}
       >
         <Typography className={classes.typography}>
-          Summary: {show.show.summary}
-          <br />
-          <br/>
-          Language: {show.show.language}
+          <b>Summary:</b> {show.show.summary}
           <br />
           <br />
-          Where to watch: {show.show.webChannel && <div>{show.show.webChannel.name}</div>}
+          <b>Language:</b> {show.show.language}
+          <br />
+          <br />
+          <b>Where to watch:</b>
+          {show.show.webChannel && <h3>{show.show.webChannel.name}</h3>}
         </Typography>
       </Popover>
     </div>

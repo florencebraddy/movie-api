@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Nav from "./components/Nav";
-import Card from "./components/Card";
+import MediaCard from "./components/MediaCard";
 
 function App() {
   const [shows, setShows] = useState([]);
@@ -36,18 +36,7 @@ function App() {
           shows.map(show => {
             return (
               <>
-                <Card
-                  key={show.show.id}
-                  show={show}
-                  image={
-                    show.show.image && (
-                      <img src={show.show.image.medium} alt="artwork"></img>
-                    )
-                  }
-                ></Card>
-                {/* {show.show.image && (
-                  <img src={show.show.image.medium} alt="artwork"></img>
-                )} */}
+                <MediaCard key={show.show.id} show={show}></MediaCard>
               </>
               // </div>
             );
